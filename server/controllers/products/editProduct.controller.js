@@ -8,7 +8,7 @@ export const editProduct = async (req, res) => {
       },
     });
 
-    res.status(200).json(product);
+    res.status(200).json({ message: "Product edited successfully." });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: err });

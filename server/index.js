@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import morgan from "morgan";
 import { authenticateDB } from "./database/authenticate.js";
 import productsRoute from './routes/products.js';
+import categoriesRoute from './routes/categories.js';
 
 // setting up dotenv config
 config();
@@ -18,6 +19,7 @@ app.use(morgan('tiny'))
 
 // routes
 app.use("/api/products", productsRoute);
+app.use("/api/categories", categoriesRoute);
 
 // initialize app
 app.listen(process.env.PORT, () => {
