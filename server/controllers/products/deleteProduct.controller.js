@@ -1,3 +1,4 @@
+import { Brand } from "../../models/Brand.js";
 import { Category } from "../../models/Category.js";
 import { Product } from "../../models/Product.js";
 
@@ -5,8 +6,11 @@ export const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findOne({ where: { id: req.params.id } });
     const category = await Category.findByPk(product.CategoryId);
+    const brand = await Brand.findByPk(product.BrandId);
     category.products -= 1;
+    brand.products -= 1;
     category.save();
+    brand.save();
     await Product.destroy({ where: { id: req.params.id } });
     res.status(200).json({ message: "Product deleted successfully" });
   } catch (err) {
