@@ -16,7 +16,8 @@ export const Category = sequelize.define('Category', {
   },
   status: {
     type: DataTypes.BOOLEAN,
-    required: true
+    required: true,
+    defaultValue: true,
   },
 }, {
   timestamps: true,
