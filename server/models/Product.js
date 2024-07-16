@@ -14,6 +14,9 @@ export const Product = sequelize.define('Product', {
     type: DataTypes.STRING,
     required: true,
   },
+  image: {
+    type: DataTypes.STRING,
+  },
   info: {
     type: DataTypes.JSON,
     required: true,
@@ -22,6 +25,8 @@ export const Product = sequelize.define('Product', {
     type: DataTypes.BOOLEAN,
     required: true
   },
+  CategoryId: DataTypes.INTEGER,
+  BrandId: DataTypes.INTEGER,
 }, {
   timestamps: true,
 });

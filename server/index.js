@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { config } from "dotenv";
-import { authenticateDB } from "./database/authenticate.js";
 import morgan from "morgan";
+import { authenticateDB } from "./database/authenticate.js";
+import productsRoute from './routes/products.js';
 
 // setting up dotenv config
 config();
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(morgan('tiny'))
 
 // routes
+app.use("/api/products", productsRoute);
 
 // initialize app
 app.listen(process.env.PORT, () => {
