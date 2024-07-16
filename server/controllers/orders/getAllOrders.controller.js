@@ -2,7 +2,7 @@ import { Order } from "../../models/Order.js";
 
 export const getAllOrders = async (req, res) => {
   const page = req.query.page || 1;
-  const limit = req.query.limit || 7;
+  const limit = req.query.limit || 100;
   const offset = (page - 1) * limit;
 
   try {
