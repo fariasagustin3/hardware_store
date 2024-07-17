@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --gray: #C7C7C7;
+  --lightblue: #00B7E6;
+  --darkgray: #252525;
+}
+
+* {
+  overflow-x: hidden;
+}

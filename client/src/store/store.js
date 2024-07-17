@@ -5,6 +5,7 @@ export const useStore = create((set) => ({
   categories: [],
   brands: [],
   loading: false,
+  cart: [],
 
   getProducts: (payload) => set(() => ({
     products: payload,
@@ -25,4 +26,12 @@ export const useStore = create((set) => ({
   loadingOff: () => set(() => ({
     loading: false,
   })),
-}))
+
+  addToCart: (payload) => set((state) => ({
+    cart: [...state.cart, payload],
+  })),
+
+  removeFromCart: (productId) => set((state) => ({
+    cart: state.cart.filter(product => product.id !== productId),
+  })),
+}));
