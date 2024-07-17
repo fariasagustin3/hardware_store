@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import TopBar from "../components/TopBar";
 import { useStore } from "../store/store";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 const HomePage = () => {
   const getProducts = useStore((state) => state.getProducts);
@@ -41,6 +42,7 @@ const HomePage = () => {
   return (
     <div>
       <TopBar brands={brands} />
+      <Navbar />
     </div>
   );
 };
