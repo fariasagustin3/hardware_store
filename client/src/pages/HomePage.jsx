@@ -5,6 +5,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import SliderComponent from "../components/SliderComponent";
 import CategoriesList from "../components/CategoriesList";
+import BrandsList from "../components/BrandsList";
 
 const HomePage = () => {
   const getProducts = useStore((state) => state.getProducts);
@@ -43,6 +44,7 @@ const HomePage = () => {
       <Navbar />
       <SliderComponent />
       <CategoriesList categories={categories} />
+      <BrandsList brands={brands} />
     </div>
   );
 };
