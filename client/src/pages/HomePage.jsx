@@ -4,6 +4,7 @@ import { useStore } from "../store/store";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import SliderComponent from "../components/SliderComponent";
+import CategoriesList from "../components/CategoriesList";
 
 const HomePage = () => {
   const getProducts = useStore((state) => state.getProducts);
@@ -15,10 +16,6 @@ const HomePage = () => {
   const products = useStore((state) => state.products);
   const categories = useStore((state) => state.categories);
   const brands = useStore((state) => state.brands);
-
-  console.log("products: ", products)
-  console.log("categories: ", categories)
-  console.log("brands: ", brands)
 
   useEffect(() => {
     const getData = async () => {
@@ -41,10 +38,11 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div>
+    <div className="bg-slate-200">
       <TopBar brands={brands} />
       <Navbar />
       <SliderComponent />
+      <CategoriesList categories={categories} />
     </div>
   );
 };
