@@ -3,6 +3,7 @@ import TopBar from "../components/TopBar";
 import { useStore } from "../store/store";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import SliderComponent from "../components/SliderComponent";
 
 const HomePage = () => {
   const getProducts = useStore((state) => state.getProducts);
@@ -43,6 +44,7 @@ const HomePage = () => {
     <div>
       <TopBar brands={brands} />
       <Navbar />
+      <SliderComponent />
     </div>
   );
 };

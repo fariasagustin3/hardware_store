@@ -40,8 +40,8 @@ const Navbar = () => {
 
         {/* cart div */}
         <div className="">
-          <div className="relative">
-            <div className="bg-[var(--lightblue)] absolute rounded-full -top-3 -right-2 h-5 w-5 flex items-center justify-center">
+          <div className="relative py-4 px-2">
+            <div className="bg-[var(--lightblue)] absolute rounded-full top-1 right-0 h-5 w-5 flex items-center justify-center">
               <div className="text-white text-xs">{cart.length}</div>
             </div>
             <svg

@@ -7,3 +7,7 @@
   --lightblue: #00B7E6;
   --darkgray: #252525;
 }
+
+* {
+  overflow-x: hidden;
+}
