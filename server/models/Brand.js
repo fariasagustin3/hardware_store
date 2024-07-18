@@ -10,8 +10,12 @@ export const Brand = sequelize.define('Brand', {
     type: DataTypes.INTEGER,
     required: true,
   },
+  logo: {
+    type: DataTypes.STRING,
+    required: true,
+  },
   image: {
-    type: DataTypes.JSON,
+    type: DataTypes.STRING,
     required: true,
   },
   status: {
