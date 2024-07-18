@@ -9,7 +9,7 @@ const BrandsList = ({ brands }) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: window.innerWidth < 768 ? 1 : 4,
     slidesToScroll: 1,
     accessibility: true,
     arrows: true,
@@ -17,7 +17,7 @@ const BrandsList = ({ brands }) => {
 
   return (
     <div className="mt-10 text-center h-full mb-20">
-      <h1 className="text-black text-2xl font-medium">
+      <h1 className="text-black text-2xl font-medium md:mb-10">
         Las mejores marcas para vos
       </h1>
       <div className="px-5 my-5 h-[400px] overflow-y-hidden slider-container">

@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-screen bg-[var(--darkgray)] border-b-4 border-b-[var(--lightblue)]">
-      <div className="py-3 px-3 flex items-center justify-between">
+      <div className="py-3 px-3 md:px-20 flex items-center justify-between">
 
         {/* logo div */}
         <div className="">
@@ -20,7 +20,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Buscar"
-            className="bg-white text-black px-3 py-2 rounded-l-md focus:outline-none"
+            className="bg-white text-black px-3 py-2 md:py-3 md:w-[600px] rounded-l-md focus:outline-none"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10 bg-white py-2 px-2 rounded-r-md text-[var(--lightblue)]"
+            className="w-10 h-10 md:h-[42px] bg-white py-2 px-2 rounded-r-md text-[var(--lightblue)]"
           >
             <path
               strokeLinecap="round"
@@ -36,6 +36,9 @@ const Navbar = () => {
               d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
             />
           </svg>
+          <div className="hidden md:flex">
+            <button className="bg-transparent text-2xl text-[var(--lightblue)] font-bold ml-5">ARMÁ TU PC!!!</button>
+          </div>
         </div>
 
         {/* cart div */}

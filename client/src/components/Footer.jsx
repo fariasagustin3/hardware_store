@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="w-screen h-full bg-white">
-      <div className="px-5 py-5">
+      <div className="px-5 py-5 md:flex md:items-start md:w-full md:justify-between md:px-16">
         {/* info section */}
         <div>
           <h2 className="text-2xl font-bold text-[var(--lightblue)] mb-5">Información</h2>
@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
 
         {/* social media section */}
-        <div className="mt-5">
+        <div className="mt-5 md:mt-0">
           <h2 className="text-2xl font-bold text-[var(--lightblue)] mb-5">
             Redes Sociales
           </h2>
