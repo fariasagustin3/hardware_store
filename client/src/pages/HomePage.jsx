@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import SliderComponent from "../components/SliderComponent";
 import CategoriesList from "../components/CategoriesList";
 import BrandsList from "../components/BrandsList";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   const getProducts = useStore((state) => state.getProducts);
@@ -45,6 +46,7 @@ const HomePage = () => {
       <SliderComponent />
       <CategoriesList categories={categories} />
       <BrandsList brands={brands} />
+      <Footer />
     </div>
   );
 };
