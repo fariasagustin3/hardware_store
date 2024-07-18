@@ -9,7 +9,7 @@ const TopBar = ({ brands }) => {
           {brands.map((brand) => (
             <div key={brand.id}>
               <Link href="/products">
-                <img src={brand.image} className="w-14" alt="" />
+                <img src={brand.logo} className="w-14" alt="" />
               </Link>
             </div>
           ))}

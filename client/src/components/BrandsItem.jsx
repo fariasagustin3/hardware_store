@@ -2,11 +2,14 @@ import React from "react";
 
 const BrandsItem = ({ brand }) => {
   return (
-    <div className="w-full h-[200px] flex flex-col justify-between rounded-md shadow-lg bg-white">
-      <h1 className="text-2xl font-bold mt-5">{brand.name}</h1>
-      <div className="w-full h-[120px] bg-slate-400 self-center float-start flex items-center justify-center">
-        <img src={brand.image} alt="" className="w-[80px] h-[80px]" />
+    <div className="w-full h-[400px] flex flex-col justify-between rounded-md shadow-lg bg-white items-center">
+      <img src={brand.image} className="w-full h-[60%] relative object-cover" />
+      <div className="absolute bottom-[20%] w-[150px] h-[150px] rounded-full bg-slate-900">
+        <div className="flex items-center justify-center h-full">
+          <img src={brand.logo} className="w-24" />
+        </div>
       </div>
+      <span className="text-2xl mb-10 font-semibold">{brand.name}</span>
     </div>
   );
 };
