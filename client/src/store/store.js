@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import axios from 'axios'
 
 export const useStore = create((set) => ({
   products: [],
@@ -6,18 +7,29 @@ export const useStore = create((set) => ({
   brands: [],
   loading: false,
   cart: [],
+  CategoryId: null,
+  BrandId: null,
 
-  getProducts: (payload) => set(() => ({
-    products: payload,
-  })),
+  getProducts: async (BrandId, CategoryId) => {
+    const products = await axios.get(`http://localhost:3001/api/products/list?BrandId=${BrandId}&CategoryId=${CategoryId}`)
+    set({
+      products: products.data.data
+    })
+  },
 
-  getCategories: (payload) => set(() => ({
-    categories: payload,
-  })),
+  getCategories: async () => {
+    const categories = await axios.get("http://localhost:3001/api/categories/list")
+    set({
+      categories: categories.data
+    })
+  },
 
-  getBrands: (payload) => set(() => ({
-    brands: payload,
-  })),
+  getBrands: async () => {
+    const brands = await axios.get("http://localhost:3001/api/brands/list")
+    set({
+      brands: brands.data
+    })
+  },
 
   loadingOn: () => set(() => ({
     loading: true,
@@ -33,5 +45,13 @@ export const useStore = create((set) => ({
 
   removeFromCart: (productId) => set((state) => ({
     cart: state.cart.filter(product => product.id !== productId),
+  })),
+
+  categorySelected: (CategoryId) => set(() => ({
+    CategoryId: CategoryId
+  })),
+
+  brandSelected: (BrandId) => set(() => ({
+    BrandId: BrandId
   })),
 }));

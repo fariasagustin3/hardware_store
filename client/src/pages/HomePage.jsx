@@ -23,13 +23,8 @@ const HomePage = () => {
     const getData = async () => {
       try {
         loadingOn();
-        const products = await axios.get("http://localhost:3001/api/products/list");
-        const categories = await axios.get("http://localhost:3001/api/categories/list");
-        const brands = await axios.get("http://localhost:3001/api/brands/list");
-
-        getProducts(products.data.data);
-        getCategories(categories.data);
-        getBrands(brands.data);
+        getCategories();
+        getBrands();
         loadingOff();
       } catch (err) {
         console.log(err);

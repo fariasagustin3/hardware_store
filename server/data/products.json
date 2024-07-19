@@ -1,0 +1,57 @@
+[
+		{
+			"id": 1,
+			"title": "DISCO RIGIDO HDD SAS 2TB SEAGATE CONSTELLATION HP",
+			"price": "57999.99",
+			"description": "Descripcion de prueba",
+			"image": "https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/ST2000NM0023-MB2000FCWDF.jpg",
+			"info": {
+				"Info 1": "Value 1",
+				"Info 2": "Value 2",
+				"Info 3": "Value 3",
+				"Info 4": "Value 4"
+			},
+			"status": true,
+			"CategoryId": 1,
+			"BrandId": null,
+			"createdAt": "2024-07-18T15:38:23.648Z",
+			"updatedAt": "2024-07-18T15:38:23.648Z"
+		},
+		{
+			"id": 2,
+			"title": "DISCO HDD 1TB SEAGATE BARRACUDA 64MB",
+			"price": "63570.99",
+			"description": "Descripcion de prueba",
+			"image": "https://katech.com.ar/wp-content/uploads/DIS001-jpg.webp",
+			"info": {
+				"Info 1": "Value 1",
+				"Info 2": "Value 2",
+				"Info 3": "Value 3",
+				"Info 4": "Value 4"
+			},
+			"status": true,
+			"CategoryId": 1,
+			"BrandId": 6,
+			"createdAt": "2024-07-18T15:39:48.377Z",
+			"updatedAt": "2024-07-18T15:39:48.377Z"
+		},
+		{
+			"id": 3,
+			"title": "DISCO HDD 1TB P300 7200RMP SATA TOSHIBA",
+			"price": "64999.99",
+			"description": "Descripcion de prueba",
+			"image": "https://app.contabilium.com/files/explorer/7026/Productos-Servicios/concepto-10723809.jpg",
+			"info": {
+				"Info 1": "Value 1",
+				"Info 2": "Value 2",
+				"Info 3": "Value 3",
+				"Info 4": "Value 4"
+			},
+			"status": true,
+			"CategoryId": 1,
+			"BrandId": null,
+			"createdAt": "2024-07-18T15:41:04.307Z",
+			"updatedAt": "2024-07-18T15:41:04.307Z"
+		}
+	]
+  
