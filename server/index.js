@@ -7,6 +7,7 @@ import productsRoute from './routes/products.js';
 import categoriesRoute from './routes/categories.js';
 import ordersRoute from './routes/orders.js';
 import brandsRoute from './routes/brands.js';
+import dataRoute from './routes/data.js';
 
 // setting up dotenv config
 config();
@@ -24,6 +25,7 @@ app.use("/api/products", productsRoute);
 app.use("/api/categories", categoriesRoute);
 app.use("/api/orders", ordersRoute);
 app.use("/api/brands", brandsRoute);
+app.use("/api/data", dataRoute);
 
 // initialize app
 app.listen(process.env.PORT, () => {
