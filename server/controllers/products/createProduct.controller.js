@@ -1,8 +1,8 @@
-import { Brand } from "../../models/Brand.js";
-import { Category } from "../../models/Category.js";
-import { Product } from "../../models/Product.js";
+const { Brand } = require("../../models/Brand.js");
+const { Category } = require("../../models/Category.js");
+const { Product } = require("../../models/Product.js");
 
-export const createProduct = async (req, res) => {
+const createProduct = async (req, res) => {
   try {
     const product = await Product.create(req.body);
     const category = await Category.findByPk(product.CategoryId);
@@ -19,3 +19,7 @@ export const createProduct = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  createProduct
+}

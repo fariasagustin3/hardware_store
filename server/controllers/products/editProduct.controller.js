@@ -1,6 +1,6 @@
-import { Product } from "../../models/Product.js";
+const { Product } = require("../../models/Product.js");
 
-export const editProduct = async (req, res) => {
+const editProduct = async (req, res) => {
   try {
     const product = await Product.update(req.body, {
       where: {
@@ -14,3 +14,7 @@ export const editProduct = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  editProduct
+}

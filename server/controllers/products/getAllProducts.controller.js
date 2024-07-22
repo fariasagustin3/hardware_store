@@ -1,8 +1,8 @@
-import { Product } from "../../models/Product.js";
-import { Brand } from "../../models/Brand.js";
-import { Category } from "../../models/Category.js";
+const { Product } = require("../../models/Product.js");
+const { Brand } = require("../../models/Brand.js");
+const { Category } = require("../../models/Category.js");
 
-export const getAllProducts = async (req, res) => {
+const getAllProducts = async (req, res) => {
   const page = req.query.page || 1;
   const limit = req.query.limit || 100;
   const offset = (page - 1) * limit;
@@ -36,3 +36,7 @@ export const getAllProducts = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  getAllProducts
+}

@@ -1,6 +1,6 @@
-import { Category } from "../../models/Category.js";
+const { Category } = require("../../models/Category.js");
 
-export const getCategoryById = async (req, res) => {
+const getCategoryById = async (req, res) => {
   try {
     const category = await Category.findOne({ where: { id: req.params.id } });
     if(!category) {
@@ -12,4 +12,8 @@ export const getCategoryById = async (req, res) => {
     console.log(err);
     res.status(500).json({ message: err });
   }
+}
+
+module.exports = {
+  getCategoryById
 }

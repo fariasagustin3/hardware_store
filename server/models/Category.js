@@ -1,7 +1,7 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../database/connection.js";
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../database/connection.js");
 
-export const Category = sequelize.define('Category', {
+const Category = sequelize.define('Category', {
   name: {
     type: DataTypes.STRING,
     required: true,
@@ -22,3 +22,7 @@ export const Category = sequelize.define('Category', {
 }, {
   timestamps: true,
 });
+
+module.exports = {
+  Category
+}

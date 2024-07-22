@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import { getAllBrands } from '../controllers/brands/getAllBrands.controller.js';
-import { getBrandById } from '../controllers/brands/getBrandById.controller.js';
-import { createBrand } from '../controllers/brands/createBrand.controller.js';
-import { deleteBrand } from '../controllers/brands/deleteBrand.controller.js';
-import { editBrand } from '../controllers/brands/editBrand.controller.js';
+const { Router } = require('express');
+const { getAllBrands } = require('../controllers/brands/getAllBrands.controller.js');
+const { getBrandById } = require('../controllers/brands/getBrandById.controller.js');
+const { createBrand } = require('../controllers/brands/createBrand.controller.js');
+const { deleteBrand } = require('../controllers/brands/deleteBrand.controller.js');
+const { editBrand } = require('../controllers/brands/editBrand.controller.js');
 
 const router = Router();
 
@@ -14,4 +14,4 @@ router
   .delete("/:id/delete", deleteBrand)
   .put("/:id/edit", editBrand);
 
-export default router;
+module.exports = router

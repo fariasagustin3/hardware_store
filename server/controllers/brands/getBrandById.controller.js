@@ -1,6 +1,6 @@
-import { Brand } from "../../models/Brand.js";
+const { Brand } = require("../../models/Brand.js");
 
-export const getBrandById = async (req, res) => {
+const getBrandById = async (req, res) => {
   try {
     const brand = await Brand.findOne({ where: { id: req.params.id } });
     if(!brand) {
@@ -12,4 +12,8 @@ export const getBrandById = async (req, res) => {
     console.log(err);
     res.status(500).json({ message: err });
   }
+}
+
+module.exports = {
+  getBrandById
 }

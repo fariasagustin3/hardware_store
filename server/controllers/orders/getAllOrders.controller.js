@@ -1,6 +1,6 @@
-import { Order } from "../../models/Order.js";
+const { Order } = require("../../models/Order.js");
 
-export const getAllOrders = async (req, res) => {
+const getAllOrders = async (req, res) => {
   const page = req.query.page || 1;
   const limit = req.query.limit || 100;
   const offset = (page - 1) * limit;
@@ -22,3 +22,7 @@ export const getAllOrders = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  getAllOrders
+}

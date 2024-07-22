@@ -1,6 +1,6 @@
-import { Brand } from "../../models/Brand.js";
+const { Brand } = require("../../models/Brand.js");
 
-export const getAllBrands = async (req, res) => {
+const getAllBrands = async (req, res) => {
   try {
     const brand = await Brand.findAll();
     res.status(200).json(brand);
@@ -9,3 +9,7 @@ export const getAllBrands = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  getAllBrands
+}

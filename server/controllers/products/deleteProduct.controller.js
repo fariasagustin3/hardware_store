@@ -1,8 +1,8 @@
-import { Brand } from "../../models/Brand.js";
-import { Category } from "../../models/Category.js";
-import { Product } from "../../models/Product.js";
+const { Brand } = require("../../models/Brand.js");
+const { Category } = require("../../models/Category.js");
+const { Product } = require("../../models/Product.js");
 
-export const deleteProduct = async (req, res) => {
+const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findOne({ where: { id: req.params.id } });
     const category = await Category.findByPk(product.CategoryId);
@@ -18,3 +18,7 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  deleteProduct
+}

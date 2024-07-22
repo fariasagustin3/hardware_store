@@ -1,6 +1,6 @@
-import { Product } from "../../models/Product.js";
+const { Product } = require("../../models/Product.js");
 
-export const getProductsByBrand = async (req, res) => {
+const getProductsByBrand = async (req, res) => {
   try {
     const products = await Product.findAll({ where: { BrandId: req.params.brandId } });
     if(!products) {
@@ -12,4 +12,8 @@ export const getProductsByBrand = async (req, res) => {
     console.log(err);
     res.status(500).json({ message: err });
   }
+}
+
+module.exports = {
+  getProductsByBrand
 }

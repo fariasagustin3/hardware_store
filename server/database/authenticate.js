@@ -1,7 +1,7 @@
-import { sequelize } from "./connection.js";
-import { setupRelations } from "./relations.js";
+const { sequelize } = require("./connection.js");
+const { setupRelations } = require("./relations.js");
 
-export const authenticateDB = async () => {
+const authenticateDB = async () => {
   try {
     await sequelize.authenticate();
     await sequelize.sync({ alter: true });
@@ -11,3 +11,7 @@ export const authenticateDB = async () => {
     console.error("Unable to connect to the database:", error);
   }
 };
+
+module.exports = {
+  authenticateDB
+}
