@@ -1,6 +1,6 @@
-import { Brand } from "../../models/Brand.js";
+const { Brand } = require("../../models/Brand.js");
 
-export const editBrand = async (req, res) => {
+const editBrand = async (req, res) => {
   try {
     await Brand.update(req.body, {
       where: {
@@ -14,3 +14,7 @@ export const editBrand = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  editBrand
+}

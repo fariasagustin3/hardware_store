@@ -1,7 +1,7 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../database/connection.js";
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../database/connection.js");
 
-export const Order = sequelize.define(
+const Order = sequelize.define(
   "Order",
   {
     fullName: {
@@ -23,3 +23,7 @@ export const Order = sequelize.define(
     timestamps: true,
   }
 );
+
+module.exports = {
+  Order
+}

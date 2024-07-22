@@ -1,6 +1,6 @@
-import { Brand } from "../../models/Brand.js";
+const { Brand } = require("../../models/Brand.js");
 
-export const deleteBrand = async (req, res) => {
+const deleteBrand = async (req, res) => {
   try {
     await Brand.destroy({ where: { id: req.params.id } });
     res.status(200).json({ message: "Brand deleted successfully" });
@@ -9,3 +9,7 @@ export const deleteBrand = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  deleteBrand
+}

@@ -1,9 +1,9 @@
-import { Router } from "express";
-import { getAllOrders } from "../controllers/orders/getAllOrders.controller.js";
-import { getOrderById } from "../controllers/orders/getOrderById.controller.js";
-import { createOrder } from "../controllers/orders/createOrder.controller.js";
-import { deleteOrder } from "../controllers/orders/deleteOrder.controller.js";
-import { editOrder } from "../controllers/orders/editOrder.controller.js";
+const { Router } = require("express");
+const { getAllOrders } = require("../controllers/orders/getAllOrders.controller.js");
+const { getOrderById } = require("../controllers/orders/getOrderById.controller.js");
+const { createOrder } = require("../controllers/orders/createOrder.controller.js");
+const { deleteOrder } = require("../controllers/orders/deleteOrder.controller.js");
+const { editOrder } = require("../controllers/orders/editOrder.controller.js");
 
 const router = Router();
 
@@ -14,4 +14,4 @@ router
   .delete("/:id/delete", deleteOrder)
   .put("/:id/edit", editOrder);
 
-export default router;
+module.exports = router;

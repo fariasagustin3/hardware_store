@@ -1,6 +1,6 @@
-import { Brand } from "../../models/Brand.js";
+const { Brand } = require("../../models/Brand.js");
 
-export const createBrand = async (req, res) => {
+const createBrand = async (req, res) => {
   try {
     const brand = await Brand.create(req.body);
     res.status(201).json(brand);
@@ -9,3 +9,7 @@ export const createBrand = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  createBrand
+}

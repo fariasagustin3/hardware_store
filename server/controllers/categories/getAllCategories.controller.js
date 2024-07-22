@@ -1,6 +1,6 @@
-import { Category } from "../../models/Category.js";
+const { Category } = require("../../models/Category.js");
 
-export const getAllCategories = async (req, res) => {
+const getAllCategories = async (req, res) => {
   try {
     const categories = await Category.findAll();
     res.status(200).json(categories);
@@ -9,3 +9,7 @@ export const getAllCategories = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  getAllCategories
+}

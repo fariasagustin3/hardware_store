@@ -1,6 +1,6 @@
-import { Order } from "../../models/Order.js";
+const { Order } = require("../../models/Order.js");
 
-export const getOrderById = async (req, res) => {
+const getOrderById = async (req, res) => {
   try {
     const order = await Order.findOne({ where: { id: req.params.id } });
     if(!order) {
@@ -12,4 +12,8 @@ export const getOrderById = async (req, res) => {
     console.log(err);
     res.status(500).json({ message: err });
   }
+}
+
+module.exports = {
+  getOrderById
 }

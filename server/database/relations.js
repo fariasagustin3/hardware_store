@@ -1,9 +1,9 @@
-import { Product } from "../models/Product.js";
-import { Category } from "../models/Category.js";
-import { Order } from "../models/Order.js";
-import { Brand } from "../models/Brand.js";
+const { Product } = require("../models/Product.js");
+const { Category } = require("../models/Category.js");
+const { Order } = require("../models/Order.js");
+const { Brand } = require("../models/Brand.js");
 
-export const setupRelations = () => {
+const setupRelations = () => {
   Category.hasMany(Product);
   Product.belongsTo(Category, { foreignKey: "CategoryId" });
 
@@ -12,3 +12,7 @@ export const setupRelations = () => {
 
   Order.belongsTo(Product);
 };
+
+module.exports = {
+  setupRelations
+}

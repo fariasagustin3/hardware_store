@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import { brands, categories, products } from '../data/data.js' 
-import { Category } from '../models/Category.js';
-import { Brand } from '../models/Brand.js';
-import { Product } from '../models/Product.js';
+const { Router } = require('express');
+const { brands, categories, products } = require('../data/data.js') 
+const { Category } = require('../models/Category.js');
+const { Brand } = require('../models/Brand.js');
+const { Product } = require('../models/Product.js');
 
 const router = Router();
 
@@ -31,4 +31,4 @@ router.delete("/bulk-delete", async (req, res) => {
   }
 })
 
-export default router;
+module.exports = router;

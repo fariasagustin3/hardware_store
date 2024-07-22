@@ -1,19 +1,19 @@
-import express from "express";
-import cors from "cors";
-import { config } from "dotenv";
-import morgan from "morgan";
-import { authenticateDB } from "./database/authenticate.js";
-import productsRoute from './routes/products.js';
-import categoriesRoute from './routes/categories.js';
-import ordersRoute from './routes/orders.js';
-import brandsRoute from './routes/brands.js';
-import dataRoute from './routes/data.js';
+const express = require("express");
+const cors = require("cors");
+const { config } = require("dotenv");
+const morgan = require("morgan");
+const { authenticateDB } = require("./database/authenticate.js");
+const productsRoute = require('./routes/products.js');
+const categoriesRoute = require('./routes/categories.js');
+const ordersRoute = require('./routes/orders.js');
+const brandsRoute = require('./routes/brands.js');
+const dataRoute = require('./routes/data.js');
 
-// setting up dotenv config
-config();
 
 // create express app
 const app = express();
+// setting up dotenv config
+config();
 
 // middlewares
 app.use(express.json());
@@ -28,7 +28,7 @@ app.use("/api/brands", brandsRoute);
 app.use("/api/data", dataRoute);
 
 // initialize app
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("Server running!");
   authenticateDB();
 });

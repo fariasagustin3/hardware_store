@@ -1,6 +1,6 @@
-import { Order } from "../../models/Order.js";
+const { Order } = require("../../models/Order.js");
 
-export const editOrder = async (req, res) => {
+const editOrder = async (req, res) => {
   try {
     await Order.update(req.body, {
       where: {
@@ -14,3 +14,7 @@ export const editOrder = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  editOrder
+}

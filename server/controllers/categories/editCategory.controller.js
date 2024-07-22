@@ -1,6 +1,6 @@
-import { Category } from "../../models/Category.js";
+const { Category } = require("../../models/Category.js");
 
-export const editCategory = async (req, res) => {
+const editCategory = async (req, res) => {
   try {
     await Category.update(req.body, {
       where: {
@@ -14,3 +14,7 @@ export const editCategory = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+module.exports = {
+  editCategory
+}
